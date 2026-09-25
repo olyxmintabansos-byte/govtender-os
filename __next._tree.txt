@@ -1,2 +1,2 @@
-:HL["/govtender-os/_next/static/chunks/1maniol44m39j.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"Kw6PFYB5P6APT6wecJxD5"}
+:HL["/govtender-os/_next/static/chunks/1qo39kai5sika.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"CMBufP63R_BIQN_I27sg1"}
