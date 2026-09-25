@@ -7,26 +7,43 @@ export type ProcurementType =
 export type TenderStatus =
   | "PENGUMUMAN_PASCAKUALIFIKASI"
   | "DOWNLOAD_DOKUMEN"
-  | "PEMBUKAAN_PENAWARAN"
-  | "EVALUASI_ADMINISTRASI_TEKNIS"
+  | "PENDAFTARAN_PESERTA"
+  | "PENAWARAN_TERBUKA"
+  | "EVALUASI_ADMINISTRASI"
+  | "EVALUASI_TEKNIS"
+  | "EVALUASI_HARGA"
   | "MASA_SANGGAH"
   | "PENETAPAN_PEMENANG"
   | "SELESAI";
 
+export type ObjectionCategory =
+  | "PENYIMPANGAN_KETENTUAN_LELANG"
+  | "REKAYASA_SPESIFIKASI_TEKNIS"
+  | "PERSEKONGKOLAN_TENDER"
+  | "PENILAIAN_EVALUASI_TIDAK_SAH";
+
+export interface ObjectionRecord {
+  id: string;
+  tenderId: string;
+  bidderCompanyName: string;
+  letterNumber: string;
+  category: ObjectionCategory;
+  description: string;
+  evidenceAttachmentName: string;
+  guaranteeBondAmountIdr: number;
+  submissionDate: string;
+  status: "DALAM_TELAAH" | "DITERIMA" | "DITOLAK";
+  pokjaVerdictNotes?: string;
+}
+
 export interface TenderPackage {
   id: string;
-  codeLpse: string;
   title: string;
+  codeLpse: string;
   agency: string;
   procurementType: ProcurementType;
-  fiscalYear: number;
-  hpsBudgetNominalIdr: number;
-  ceilingBudgetPaguIdr: number;
   status: TenderStatus;
-  closingDate: string;
-  biddersCount: number;
-  location: string;
-  qualification: "KECIL" | "NON_KECIL";
+  hpsBudgetNominalIdr: number;
   sanggahDeadlineHours: number;
 }
 
@@ -41,37 +58,10 @@ export interface BidderParticipant {
   technicalScore: number;
   priceScore: number;
   totalCompositeScore: number;
-  ranking: number;
-  status: "LULUS_EVALUASI" | "GUGUR_ADMINISTRASI" | "GUGUR_TEKNIS" | "CALON_PEMENANG";
-  disqualificationReason?: string;
-}
-
-export type ObjectionCategory =
-  | "PENYIMPANGAN_KETENTUAN_LELANG"
-  | "REKAYASA_SPESIFIKASI_TEKNIS"
-  | "PERSEKONGKOLAN_TENDER"
-  | "PENILAIAN_EVALUASI_TIDAK_SAH";
-
-export type ObjectionStatus = "DALAM_TELAAH" | "DITERIMA" | "DITOLAK";
-
-export interface ObjectionRecord {
-  id: string;
-  tenderId: string;
-  bidderCompanyName: string;
-  letterNumber: string;
-  submissionDate: string;
-  category: ObjectionCategory;
-  description: string;
-  evidenceAttachmentName: string;
-  guaranteeBondAmountIdr: number;
-  status: ObjectionStatus;
-  pokjaVerdictNotes?: string;
 }
 
 export interface LpseKpi {
-  totalPackagesActive: number;
-  totalHpsValueIdr: number;
-  avgEfficiencyPct: number;
-  totalVerifiedVendors: number;
-  auditIntegrityScore: number;
+  efisiensiAnggaran: number;
+  rata2Penawaran: number;
+  kesehatanPersaingan: "SEHAT" | "MODERAT" | "KURANG_SEHAT";
 }
