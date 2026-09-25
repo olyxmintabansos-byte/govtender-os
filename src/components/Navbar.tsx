@@ -7,6 +7,8 @@ import { useTender } from "@/context/TenderContext";
 import {
   Scale,
   FileSpreadsheet,
+  AlertTriangle,
+  Award,
   RotateCcw,
 } from "lucide-react";
 
@@ -17,13 +19,15 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "LPSE TENDER MATRIX", icon: Scale },
     { href: "/evaluasi", label: "BIDDER QUALIFICATION", icon: FileSpreadsheet },
+    { href: "/sanggah", label: "MASA SANGGAH", icon: AlertTriangle },
+    { href: "/pemenang", label: "DOKUMEN SPPBJ (A4)", icon: Award },
   ];
 
   return (
     <header className="border-b-2 border-black bg-white px-6 py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-[#FF0000] text-white flex items-center justify-center font-bold text-lg">
+          <div className="w-9 h-9 bg-[#FF0000] text-white flex items-center justify-center font-bold text-lg font-mono">
             +
           </div>
           <div>
@@ -31,7 +35,7 @@ export default function Navbar() {
               <h1 className="text-xl font-bold tracking-tight text-black uppercase font-mono">
                 GovTender OS
               </h1>
-              <span className="bg-black text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider">
+              <span className="bg-black text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider font-mono">
                 SPSE 4.5 LKPP
               </span>
             </div>
@@ -41,7 +45,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center gap-6 font-mono text-xs border-l-2 border-black pl-6">
+        <div className="hidden xl:flex items-center gap-6 font-mono text-xs border-l-2 border-black pl-6">
           <div>
             <span className="text-slate-400 block text-[10px]">TOTAL PAKET:</span>
             <span className="font-bold text-black">{kpis.totalPackagesActive} LELANG AKTIF</span>
@@ -53,7 +57,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href;
@@ -61,7 +65,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex items-center gap-2 px-4 py-2 text-xs font-bold font-mono uppercase tracking-wider transition-all border ${
+                className={`flex items-center gap-2 px-3 py-2 text-xs font-bold font-mono uppercase tracking-wider transition-all border ${
                   isActive
                     ? "bg-black text-white border-black"
                     : "bg-white text-black border-slate-300 hover:border-black"

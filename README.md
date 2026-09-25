@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏛️ GovTender OS (Titan #25)
+### LKPP LPSE Public Procurement Tender Bidding Matrix & Official SPPBJ Stamped A4 Studio
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS v4](https://img.shields.io/badge/TailwindCSS-v4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![Status](https://img.shields.io/badge/Status-100%25%20Production%20Live-brightgreen)](https://olyxmintabansos-byte.github.io/govtender-os/)
+[![Milestone](https://img.shields.io/badge/Milestone-Titan%20%2325%20Silver%20Halfway%20(25%2F50)-red)]()
 
-First, run the development server:
+> **Live Deployment:** [https://olyxmintabansos-byte.github.io/govtender-os/](https://olyxmintabansos-byte.github.io/govtender-os/)  
+> **Aesthetic Movement:** **#3 Minimalism + #29 Split-Screen Layout (Swiss Typographic Style with Stark Red `#FF0000` Accent)**  
+> **Organization:** `olyxmintabansos-byte`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Architectural Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+GovTender OS adalah sistem pengadaan barang/jasa pemerintah berbasis web client-side berstandar **SPSE v4.5 LKPP (Lembaga Kebijakan Pengadaan Barang/Jasa Pemerintah)** dan Perpres No. 12 Tahun 2021. Dirancang dengan disiplin Swiss Typographic Grid (Josef Müller-Brockmann) serta layout split-screen asimetris berdaya responsif tinggi.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4 Rute Produksi:
+1. **`/` (LPSE Tender Bidding Split-Screen Matrix)**: Feed tender LPSE interaktif di sisi kiri (45%) dan drilldown HPS vs penawaran vendor di sisi kanan (55%).
+2. **`/evaluasi/` (Bidder Qualification Scoring & Price Anomaly)**: Penilaian kualifikasi administrasi/teknis dan deteksi harga dumping (<80% HPS).
+3. **`/sanggah/` (Masa Sanggah & Klarifikasi Dokumen Lelang)**: Countdown masa sanggah 48 jam, log sanggahan publik, dan formulir sanggah banding dengan jaminan 1% HPS.
+4. **`/pemenang/` (Surat Penetapan Pemenang SPPBJ & BAHP A4)**: Dokumen formal negara berstempel digital dinamis, barcode verifikasi, dan format cetak A4 presisi (`window.print()`).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Part of The 50 Enterprise Titans Sovereign Fleet • Engineered by Antigravity Chief Systems Architect*
